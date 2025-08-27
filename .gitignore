@@ -1,0 +1,16 @@
+# Node / React
+node_modules/
+frontend/node_modules/
+
+# Python / Flask
+backend/.venv/
+__pycache__/
+*.pyc
+
+# 비밀/환경
+.env
+frontend/.env*
+backend/serviceAccountKey.json
+
+# macOS 생성 파일
+.DS_Store
