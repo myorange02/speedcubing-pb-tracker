@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAuth, signInWithCustomToken, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithCustomToken, onAuthStateChanged, signOut } from "firebase/auth";
 import { savePB3x3 } from './pbRepo';
 import usePB3x3 from "./hooks/usePB3x3";
 
@@ -75,6 +75,7 @@ export default function App() {
     <div style={{ padding: 24, display: "grid", gap: 12, maxWidth: 360 }}>
       <h1>PB Tracker</h1>
       <button onClick={openWCA}>{uid ? "다시 로그인" : "WCA로 로그인"}</button>
+      <button onClick={() => signOut(getAuth())}>로그아웃</button>
       {uid && <small>Signed in: {uid}</small>}
 
       <div>
