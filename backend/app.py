@@ -15,7 +15,7 @@ load_dotenv() #.env 파일 읽기
 CORS(
     app,
     supports_credentials=True,
-    origins=[os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")]
+    origins=[os.getenv("FRONTEND_ORIGIN")]
 )
 
 SERVICE_ACCOUNT = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "serviceAccountKey.json")
