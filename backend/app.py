@@ -96,7 +96,7 @@ def wca_callback():
     
     # 6) 프린트로 전달 후 팝업 닫기
     html = f"""<!doctype html>
-        <meta charset="utf-8 />
+        <meta charset="utf-8" />
         <script>
             try {{
                 if (window.opener) {{
