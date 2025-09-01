@@ -4,7 +4,7 @@ import { savePB3x3 } from './pbRepo';
 import usePB3x3 from "./hooks/usePB3x3";
 
 
-const BACKEND_BASE = "https://continuously-property-jews-cloth.trycloudflare.com"
+const BACKEND_BASE = import.meta.env.VITE_BACKEND_BASE;
 
 export default function App() {
   const [singleMs, setSingleMs] = useState("");
