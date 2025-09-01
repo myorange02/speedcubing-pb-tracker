@@ -3,6 +3,7 @@ import { getAuth, signInWithCustomToken, onAuthStateChanged } from "firebase/aut
 import { savePB3x3 } from './pbRepo';
 import usePB3x3 from "./hooks/usePB3x3";
 
+
 const BACKEND_BASE = "https://continuously-property-jews-cloth.trycloudflare.com"
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
     }
   };
 
+
   const pb = usePB3x3(uid);
 
   const save = async () => {
@@ -48,8 +50,10 @@ export default function App() {
         singleMs: Number(singleMs),
         ao5Ms: Number(ao5Ms),
       });
+
       setSingleMs("");
       setAo5Ms("");
+
       alert("저장 완료");
     } catch(e) {
       console.error(e);
