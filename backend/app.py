@@ -18,8 +18,10 @@ CORS(
     origins=[os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")]
 )
 
-cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
+SERVICE_ACCOUNT = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "serviceAccountKey.json")
+if not firebase_admin._apps:
+    cred = credentials.Certificate(SERVICE_ACCOUNT)
+    firebase_admin.initialize_app(cred)
 
 # --- WCA OAuth authorize URL ---
 WCA_AUTH = "https://www.worldcubeassociation.org/oauth/authorize"
